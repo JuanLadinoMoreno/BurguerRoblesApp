@@ -6,6 +6,9 @@ import NavBar from './components/NavBar.jsx'
 import Header from './components/Header.jsx'
 import BestSeller from './components/BestSeller.jsx'
 import MenuIndex from './components/MenuIndex.jsx'
+import BanIcons from './components/BanIcons.jsx'
+import BanAsados from './components/BanAsados.jsx'
+
 
 
 
@@ -15,5 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Header />
     <BestSeller/>
     <MenuIndex/>
+    <BanIcons/>
+    <BanAsados/>
   </React.StrictMode>,
 )
