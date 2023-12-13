@@ -17,8 +17,6 @@ export default function BestSeller() {
                         Diversas</h3>
                     <h3 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500" data-aos-delay="300">
                         deliciosas</h3>
-
-                   
                 </div>
                 <div className="col-lg-8 col-sm-12 d-flex justify-content-center align-items-center">
 

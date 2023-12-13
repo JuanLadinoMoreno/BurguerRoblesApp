@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom/client'
 import NavBar from './components/NavBar.jsx'
 import Header from './components/Header.jsx'
 import BestSeller from './components/BestSeller.jsx'
+import MenuIndex from './components/MenuIndex.jsx'
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -12,5 +14,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <NavBar/>
     <Header />
     <BestSeller/>
+    <MenuIndex/>
   </React.StrictMode>,
 )
