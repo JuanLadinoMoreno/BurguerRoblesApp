@@ -6,6 +6,8 @@ import MenuIndex from './components/MenuIndex.jsx'
 import BanIcons from './components/BanIcons.jsx'
 import BanAsados from './components/BanAsados.jsx'
 import BanGalle from './components/BanGalle.jsx'
+import BanEventos from './components/BanEventos.jsx'
+
 
 
 
@@ -19,6 +21,7 @@ export default function App() {
     <BanIcons/>
     <BanAsados/>
     <BanGalle/>
+    <BanEventos/>
     </>
   )
 }
