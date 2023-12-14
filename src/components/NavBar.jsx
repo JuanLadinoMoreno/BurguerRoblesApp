@@ -19,9 +19,9 @@ export default function NavBar() {
 
 
         <div className='icons '>
-            <a href=""><i className="bi bi-facebook"></i></a>
-            <a href=""> <i className="bi bi-instagram"></i></a>
-            <a href=""><i className="bi bi-twitter"></i></a>
+            <a href=""><i className="fab fa-facebook-f"></i></a>
+            <a href=""> <i className="fab fa-instagram"></i></a>
+            <a href=""><i className="fab fa-twitter"></i></a>
         </div>
 
     

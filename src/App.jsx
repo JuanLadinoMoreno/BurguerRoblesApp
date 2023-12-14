@@ -7,6 +7,7 @@ import BanIcons from './components/BanIcons.jsx'
 import BanAsados from './components/BanAsados.jsx'
 import BanGalle from './components/BanGalle.jsx'
 import BanEventos from './components/BanEventos.jsx'
+import Footer from './components/Footer.jsx'
 
 
 
@@ -22,6 +23,7 @@ export default function App() {
     <BanAsados/>
     <BanGalle/>
     <BanEventos/>
+    <Footer/>
     </>
   )
 }
