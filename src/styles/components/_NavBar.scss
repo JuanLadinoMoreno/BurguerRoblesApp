@@ -9,7 +9,13 @@ nav {
     padding: 10px 20px;
     z-index: 2;
 
-
+    a {
+        color: $color-tercero;
+        padding: 0 20px;
+        font-family: $font-tercera;
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
 
     ul {
         display: flex;
@@ -20,14 +26,6 @@ nav {
             list-style: none;
             display: inline;
             margin: 0 5px;
-
-            a {
-                color: $color-tercero;
-                padding: 0 20px;
-                font-family: $font-tercera;
-                font-size: 18px;
-                letter-spacing: 1px;
-            }
         }
 
         @include Tablet() {

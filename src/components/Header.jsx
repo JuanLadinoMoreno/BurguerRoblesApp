@@ -7,7 +7,7 @@ export default function Header() {
    
     <header className="header ">
         <div className="bgBlack"></div>
-        <video className="" src={vgVideo} type="video/mp4" autoPlay loop muted></video>
+        <video className="" src={vgVideo} type="video/mp4"  loop muted></video>
         <div className="header-content">
             <h1>
                 <i className="fas fa-hamburger"></i>

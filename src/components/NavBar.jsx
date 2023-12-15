@@ -1,16 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 // import imgLogo from '../assets/img/logoSl.png'
 
 export default function NavBar() {
   return (
     <>
     <nav id="top-nav">
-        <a className=' lognav' href="./index.html">
+        <a className=' lognav' href="/">
             <img src='../../public/img/logoSl.png' className='nav-logo'  alt=""/>
         </a>
 
         <ul>
-            <li><a href="./index.html">Inicio</a></li>
+            <Link to='/'>  <li><a>Inicio</a></li></Link>
+            
+            <Link to='/menu'>  <li><a>Menu</a></li></Link>
             <li><a href="pages/menu.html">Menu</a></li>
             <li><a href="pages/about.html">Quienes somos</a></li>
             <li><a href="pages/asados.html">Asados</a></li>
