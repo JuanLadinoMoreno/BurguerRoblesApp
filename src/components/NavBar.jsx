@@ -7,15 +7,13 @@ export default function NavBar() {
   return (
     <>
     <nav id="top-nav">
-        <a className=' lognav' href="/">
-            <img src='../../public/img/logoSl.png' className='nav-logo'  alt=""/>
-        </a>
 
+        <Link to='/'>
+            <img src='../../public/img/logoSl.png' className='nav-logo'  alt=""/>
+        </Link>
         <ul>
-            <Link to='/'>  <li><a>Inicio</a></li></Link>
-            
-            <Link to='/menu'>  <li><a>Menu</a></li></Link>
-            <li><a href="pages/menu.html">Menu</a></li>
+            <Link to='/'>Inicio</Link>
+            <Link to='/menu'>Menu</Link>
             <li><a href="pages/about.html">Quienes somos</a></li>
             <li><a href="pages/asados.html">Asados</a></li>
             <li><a href="pages/eventos.html">Eventos</a></li>

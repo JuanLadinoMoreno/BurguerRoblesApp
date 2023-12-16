@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import NavBar from '../components/NavBar'
 import Menu from '../pages/Menu'
+import Footer from '../components/Footer.jsx'
 
 
 
@@ -14,6 +15,7 @@ export default function MainRouter() {
         <Route path='/' element={<Home />} />
         <Route path='/menu' element={<Menu />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
