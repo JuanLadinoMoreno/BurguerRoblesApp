@@ -8,3 +8,7 @@ export async function getProducts(){
     
 }
 
+export async function getProductById(id){
+    return await axios.get(`https://apimocha.com/burgrob/products/${id}`);
+}
+

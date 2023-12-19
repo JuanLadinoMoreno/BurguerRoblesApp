@@ -2,18 +2,13 @@
 import React, { useEffect, useState } from 'react'
 import ItemListContainer from '../components/Pages/Menu/ItemListContainer'
 import { getProducts } from '../services';
+import { useGetProducts } from '../Hooks/useProducts';
+
 
 export default function Menu() {
 
-    const [productsData, setProductsData] = useState([]);
+     const { productsData } = useGetProducts()
 
-    useEffect( () => {
-        getProducts().then(response => {
-            setProductsData(response.data);
-        }).catch(error => {console.log(error);})
-    }, []);
-
-    // console.log(productsData);
 
     return (
         <>
