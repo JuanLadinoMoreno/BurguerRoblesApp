@@ -1,8 +1,5 @@
-# React + Vite
+# BurguerRoblesApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dentro del la barra de navegacion se encuentra la seccion 'menú', al dar clic nos envia a la página donde nos mostrara todos los productos, tambien nos mostrara una menu de los diferentes tipos(categorias) de prductos que hay, al dar clic se muestran productos del tipo seleccionado, la carga de las categorias las tengo con api mocha y se bloquea el endpoint después de 50 request que se hacen, por momento no hay datos en hot dogs y burritos.
+La simulación del detalle del producto solo la tiene en los dos primeros productos(burger tradicional y burguer con tocino) pero al igual, los datos estan echos con api mocha (solamente creé esos 2 endpoints simulando la ruta burguerrobles/menu/item/id) igual este endpoint se bloquea.
+Con api mocha y mocky creee endpoints simulando datos que me arrojarían de una api
