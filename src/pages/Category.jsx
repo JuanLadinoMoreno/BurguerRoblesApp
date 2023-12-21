@@ -1,10 +1,13 @@
 import React from 'react'
 import ItemListContainer from '../components/Pages/Menu/ItemListContainer'
-import { useGetProducts } from '../Hooks/useProducts';
+import { useParams } from 'react-router-dom';
+import { useGetProductsByCategory } from '../Hooks/useProducts';
+
 
 export const Category = () => {
+  const {id} = useParams();
 
-  const { productsData } = useGetProducts()
+  const { productsData } = useGetProductsByCategory(id);
   
     return (
       <>

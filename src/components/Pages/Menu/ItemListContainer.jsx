@@ -1,74 +1,28 @@
 import { Link } from "react-router-dom"
+import { useGetCategories } from "../../../Hooks/useProducts";
 
 
 export default function ItemListContainer({ productsData }) {
 
-    // const { aderesos } = productsData;
-    // aderesos.map((ade, index) => console.log(ade.nombre))
-
-
-    // const cargaAderesos = (producto) => {
-    //     const { aderesos } = producto;
-    //     if (!aderesos) {
-    //         return "";
-    //     }
-    //     let adeArre = Object.values(aderesos);
-    //     let HTMLresul = "";
-    //     for (let i = 0; i < adeArre.length; i++) {
-    //         HTMLresul = <li> {adeArre[i]} </li>;
-    //         console.log(HTMLresul);
-
-    //     }
-    //     return HTMLresul;
-    // }
-
-    // const cargaAde = (producto) => {
-    //     const { aderesos } = producto;
-    //     if (!aderesos) {
-    //         return "";
-    //     }
-    //     let adeArre = Object.values(aderesos);
-    //     let HTMLresul = "";
-    //     adeArre.map(ade => {
-    //         HTMLresul = <li> {adeArre[i]} </li>;
-    //         console.log(HTMLresul);
-    //     })
-    //     return HTMLresul;
-    // }
-
-    // const cargaAderes = (producto) => {
-    //     producto.aderesos.map((item, index) =>{
-    //         return(
-    //             <div key={index}>
-
-    //                 {Object.keys(item).map((key) => {
-    //                     return(
-    //                         <li key={index}>
-    //                             {item[key]}
-    //                         </li>
-    //                     )
-    //                 })}
-    //             </div>
-    //         )
-    //     }
-
-    //     )
-    // }
-
-
+    const {categories} = useGetCategories();
 
     return (
         <>
             <section className="contMen">
                 <div className="dvMenProductos">
                     <ul className="ulMenu">
-                        {/* <!-- se agrega btnMenu en la pagina de pedido --> */}
-                        <li><button id="todosP" className="btn-prin btnMenu btnMenuProducto active">Todos los productos</button></li>
-                        <li><button id="burguerP" className="btn-prin btnMenu btnMenuProducto">Hamburguesas</button></li>
-                        <li><button id="hotdogP" className="btn-prin btnMenu btnMenuProducto">Hot dos</button></li>
-                        <li><button id="bagP" className="btn-prin btnMenu btnMenuProducto">Baguettes</button></li>
-                        <li><button id="sandP" className="btn-prin btnMenu btnMenuProducto">Sandwiches</button></li>
-                        <li><button id="burrP" className="btn-prin btnMenu btnMenuProducto">Burritos</button></li>
+                        
+                        {
+                            categories.map((cate, index) => {
+                                return (
+                                <Link key={index} to={`/menu/category/${cate.id}`} >
+                                    <li className="btn-prin btnMenu btnMenuProducto">
+                                         {cate.nombre}
+                                    </li>
+                                </Link>
+                                )
+                            })
+                        }
                     </ul>
                     <a className="btn-transparent " href="../pages/shop.html">
                         <i className="bi bi-cart-fill"></i>
@@ -81,7 +35,6 @@ export default function ItemListContainer({ productsData }) {
 
                     {
                         productsData.map(products => {
-                            console.log(products.tipo.nombre);
                             return (
 
                                 <div className="dvProducto" key={products.id}>

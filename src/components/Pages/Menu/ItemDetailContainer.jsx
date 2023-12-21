@@ -14,7 +14,7 @@ export default function ItemDetailContainer() {
         <>
 
             <section className="contMen">
-                <div className="dvMenProductos">
+                <div className="dvProductos">
 
 
 
@@ -27,18 +27,17 @@ export default function ItemDetailContainer() {
                             <ul className="ulIngre">
                                 <li >{productData.ingrePrep}</li>
                                 <li >{productData.pan}</li>
-                                <li > catsup </li><li> Mayonesa </li><li> Mostaza </li>
-                                <li > jitomate </li><li> cebolla </li><li> rajas </li>
-
-
-
-
-
+                                {
+                                    productData.aderesos ? productData.aderesos.map((adereso) => (<li key={adereso.id}> {adereso.nombre} </li>)) : null
+                                }
+                                {
+                                    productData.vegetales ? productData.vegetales.map((adereso) => (<li key={adereso.id}>{adereso.nombre}</li>)) : null
+                                }
                             </ul>
-                            {/* <button className="btnAnadirP"><i className="bi bi-cart-plus-fill"></i>Ordenar</button> */}
                         </div>
                     </div>
                 </div>
+
             </section>
 
             <section className="sectProdBig overflow-x-hidden">

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-// import imgLogo from '../assets/img/logoSl.png'
 
 export default function NavBar() {
   return (
@@ -17,6 +16,9 @@ export default function NavBar() {
             <li><a href="pages/about.html">Quienes somos</a></li>
             <li><a href="pages/asados.html">Asados</a></li>
             <li><a href="pages/eventos.html">Eventos</a></li>
+            <li>
+                
+            </li>
         </ul>
 
 

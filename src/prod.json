@@ -525,8 +525,8 @@
         "precio": "60",
         "preparacion": "Milanesa",
         "tipo": {
-            "id": "bagP",
-            "nombre": "baguette",
+            "id": "sandP",
+            "nombre": "club shandwiches",
             "url": "../public/img/menu/sandwiches/sandw.png"
         },
         "urlImg": "../public/img/menu/sandwiches/sandw.png",
