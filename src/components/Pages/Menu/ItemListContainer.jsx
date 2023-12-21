@@ -91,7 +91,7 @@ export default function ItemListContainer({ productsData }) {
                             <span className="spanMov"></span>
                             <span className="spanMov"></span>
                             <span className="spanMov"></span>
-                            <img className="" src="../assets/img/menu/bgTripl.png" alt="" />
+                            <img className="" src="../../public/img/bgTripl.png" style={{maxWidth:"70%"}} alt="" />
                         </div>
 
 

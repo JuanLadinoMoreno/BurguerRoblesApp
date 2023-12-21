@@ -20,7 +20,7 @@ export default function ItemDetailContainer() {
 
                     <div className="dvProducto" key={productData.id}>
 
-                        <img className="imgProducto" src={productData.urlImg} alt="" height='100px' />
+                        <img className="imgProducto" src={productData.urlImg} alt="" width='350px' />
 
                         <div className="datProd">
                             <h3>{productData.nombre}</h3>
@@ -60,7 +60,7 @@ export default function ItemDetailContainer() {
         <span className="spanMov"></span>
         <span className="spanMov"></span>
         <span className="spanMov"></span>
-        <img className="" src="../assets/img/menu/bgTripl.png" alt=""/>
+        <img className="" src="../../public/img/bgTripl.png" style={{maxWidth:"70%"}} alt=""/>
     </div>
 
 
