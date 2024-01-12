@@ -1,48 +1,117 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { PopupImage } from '../../PopupImage';
 
 export default function BanGalle() {
-  return (
-    <section className="sect-gallery">
-    <div className="grid-container">
-        <div className="item ">
-            <img className="imgP" src="../../public/img/gallery/ban/1.png" alt="" loading="lazy"/>
-        </div>
 
-        <div className="item ">
-            <img className="imgP" src="../../public/img/gallery/ban/2.png" alt="" loading="lazy"/>
-        </div>
 
-        <div className="item">
-            <img className="imgP" src="../../public/img/gallery/ban/3.png" alt="" loading="lazy"/>
-        </div>
+    const [selectedImage, setSelectedImage] = useState(null);
 
-        <div className="item r-span2">
-            <img className="imgP" src="../../public/img/gallery/ban/7.png" alt="" loading="lazy"/>
-        </div>
+    const handleImageClick = (imageUrl) => {
+        setSelectedImage(imageUrl);
+    };
 
-        <div className="item ">
-            <img className="imgP" src="../../public/img/gallery/ban/10.png" alt="" loading="lazy"/>
-        </div>
+    const handleClosePopup = () => {
+        setSelectedImage(null);
+    };
 
-        <div className="item r-span2">
-            <img className="imgP" src="../../public/img/gallery/ban/9.png" alt="" loading="lazy"/>
-        </div>
 
-        <div className="item ">
-            <img className="imgP" src="../../public/img/gallery/ban/4.png" alt="" loading="lazy"/>
-        </div>
 
-        <div className="item ">
-            <img className="imgP" src="../../public/img/gallery/ban/5.png" alt="" loading="lazy"/>
-        </div>
+    return (
+        <>
 
-        <div className="item ">
-            <img className="imgP" src="../../public/img/gallery/ban/11.png" alt="" loading="lazy"/>
-        </div>
-        <div className="item ">
-            <img className="imgP" src="../../public/img/gallery/ban/6.png" alt="" loading="lazy"/>
-        </div>
-    </div>
-</section>
-  )
+            <section className="sect-gallery">
+                
+
+                <div className="grid-container">
+                    <div className="item ">
+                        <img className="imgP"
+                            src="../../public/img/gallery/ban/1.png"
+                            onClick={(e) => handleImageClick(e.target.src)}
+                            alt=""
+                            loading="lazy" />
+                    </div>
+
+                    <div className="item ">
+                        <img className="imgP"
+                            src="../../public/img/gallery/ban/2.png"
+                            onClick={(e) => handleImageClick(e.target.src)}
+                            alt=""
+                            loading="lazy" />
+                    </div>
+
+                    <div className="item">
+                        <img className="imgP"
+                            src="../../public/img/gallery/ban/3.png"
+                            onClick={(e) => handleImageClick(e.target.src)}
+                            alt=""
+                            loading="lazy" />
+                    </div>
+
+                    <div className="item r-span2">
+                        <img className="imgP"
+                            src="../../public/img/gallery/ban/7.png"
+                            onClick={(e) => handleImageClick(e.target.src)}
+                            alt=""
+                            loading="lazy" />
+                    </div>
+
+                    <div className="item ">
+                        <img className="imgP"
+                            src="../../public/img/gallery/ban/10.png"
+                            onClick={(e) => handleImageClick(e.target.src)}
+                            alt=""
+                            loading="lazy" />
+                    </div>
+
+                    <div className="item r-span2">
+                        <img className="imgP"
+                            src="../../public/img/gallery/ban/9.png"
+                            onClick={(e) => handleImageClick(e.target.src)}
+                            alt=""
+                            loading="lazy" />
+                    </div>
+
+                    <div className="item ">
+                        <img className="imgP"
+                            src="../../public/img/gallery/ban/4.png"
+                            onClick={(e) => handleImageClick(e.target.src)}
+                            alt=""
+                            loading="lazy" />
+                    </div>
+
+                    <div className="item ">
+                        <img className="imgP"
+                            src="../../public/img/gallery/ban/5.png"
+                            onClick={(e) => handleImageClick(e.target.src)}
+                            alt=""
+                            loading="lazy" />
+                    </div>
+
+                    <div className="item ">
+                        <img className="imgP"
+                            src="../../public/img/gallery/ban/11.png"
+                            onClick={(e) => handleImageClick(e.target.src)}
+                            alt=""
+                            loading="lazy" />
+                    </div>
+                    <div className="item ">
+                        <img className="imgP"
+                            src="../../public/img/gallery/ban/6.png"
+                            onClick={(e) => handleImageClick(e.target.src)}
+                            alt=""
+                            loading="lazy" />
+                    </div>
+                </div>
+
+                {
+                    selectedImage && (
+                        <PopupImage imageUrl={selectedImage} onClose={handleClosePopup} />
+                    )
+                }
+
+            </section>
+
+        </>
+
+    )
 }

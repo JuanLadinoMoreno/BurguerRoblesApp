@@ -1,22 +1,28 @@
-import React from 'react'
+import { useContext, useState } from 'react'
 import { useGetProductsById } from '../../../Hooks/useProducts'
 import { Link, useParams } from 'react-router-dom'
+import MenuProducts from './MenuProducts'
+import { CarContext } from '../../../context/CarContext'
+import ProdBig from '../../ProdBig'
+import { ItemCount } from '../../ItemCount'
+
 
 
 export default function ItemDetailContainer() {
 
     const { id } = useParams() //Obtiene id de la ruta para mostrar el producto
     const { productData } = useGetProductsById(id)
-
+    // const {handleAdd, handleRemove} = useContext(CarContext)
 
     return (
 
         <>
 
             <section className="contMen">
+
+                <MenuProducts/>
+
                 <div className="dvProductos">
-
-
 
                     <div className="dvProducto" key={productData.id}>
 
@@ -35,39 +41,15 @@ export default function ItemDetailContainer() {
                                 }
                             </ul>
                         </div>
+                        {/* <button className="btnAnadirP" onClick={handleRemove}><i className="bi bi-cart-plus-fill"></i> ➖ </button>
+                        <button className="btnAnadirP" onClick={handleAdd}><i className="bi bi-cart-plus-fill"></i> ➕ </button> */}
+                        <ItemCount productId = {productData.id}/>
                     </div>
                 </div>
 
             </section>
 
-            <section className="sectProdBig overflow-x-hidden">
-
-
-<div className="row">
-
-    <div className="sectProdBig__contDat p-5 col-lg-5  col-md-6 col-sm-12">
-        <img className="" src="../assets/img/icons/real.svg" alt=""/>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. <span>Quaerat deleniti sunt autem veritatis
-                vel iusto ratione mollitia </span> neque unde cupiditate!
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, officia!
-        </p>
-    </div>
-
-    <div
-        className="sectProdBig__contImg col-lg-7 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
-        <span className="spanMov"></span>
-        <span className="spanMov"></span>
-        <span className="spanMov"></span>
-        <span className="spanMov"></span>
-        <span className="spanMov"></span>
-        <img className="" src="../../public/img/bgTripl.png" style={{maxWidth:"70%"}} alt=""/>
-    </div>
-
-
-</div>
-
-
-</section>
+            <ProdBig/>            
 
         </>
     )

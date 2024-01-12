@@ -7,40 +7,49 @@ import { getProducts, getProductById, getCategories, getProductByCategory } from
 
 export const useGetProducts = () => {
     const [productsData, setProductsData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
 
-    useEffect( () => {
-        getProducts().then(response => {
-            setProductsData(response.data);
-            // console.log(productsData);
-        }).catch(error => {console.log(error);})
+    useEffect(() => {
+        setTimeout(() => {
+            getProducts().then(response => {
+                setProductsData(response.data);
+                setIsLoading(false)
+                // console.log(productsData);
+            }).catch(error => { console.log(error); })
+        }, 3200);
     }, []);
 
-    return{ productsData }
+    return { productsData, isLoading }
 }
 
 
 export const useGetProductsById = (id) => {
     const [productData, setProductData] = useState([]);
 
-    useEffect( () => {
-        getProductById(id).then(response => {
-            setProductData(response.data);
-        }).catch(error => {console.log(error);})
+    useEffect(() => {
+        setTimeout(() => {
+            getProductById(id).then(response => {
+                setProductData(response.data);
+            }).catch(error => { console.log(error); })
+        }, .2700);
+
     }, []);
 
-    return{ productData }
+    return { productData }
 }
 
 export const useGetCategories = () => {
     const [categories, setCategories] = useState([]);
 
-    useEffect( () => {
-        getCategories().then(response => {
-            setCategories(response.data);
-        }).catch(error => {console.log(error);})
+    useEffect(() => {
+        setTimeout(() => {
+            getCategories().then(response => {
+                setCategories(response.data);
+            }).catch(error => { console.log(error); })
+        }, 3200);
     }, []);
 
-    return{ categories }
+    return { categories }
 }
 
 
@@ -50,11 +59,14 @@ export const useGetCategories = () => {
 export const useGetProductsByCategory = (id) => {
     const [productsData, setProductsData] = useState([]);
 
-    useEffect( () => {
-        getProductByCategory(id).then(response => {
-            setProductsData(response.data);
-        }).catch(error => {console.log(error);})
+    useEffect(() => {
+        setTimeout(() => {
+            getProductByCategory(id).then(response => {
+                setProductsData(response.data);
+            }).catch(error => { console.log(error); })
+        }, 3200);
+
     }, [id]);
 
-    return{ productsData }
+    return { productsData }
 }

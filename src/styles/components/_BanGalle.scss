@@ -33,7 +33,7 @@
         }
         
         &:hover{
-                transform: scale(.95);
+                transform: scale(1.05);
             }
     }
 }
@@ -52,16 +52,15 @@
     position: fixed;
     top: 0;
     left: 0;
-    opacity: 0;
-    pointer-events: none;
+    // opacity: 0;
+    pointer-events: auto;
     z-index: 100;
 
     .imgGra{
-        background: aquamarine;
         width: 90%;
         max-width: 700px;
         max-height: 80vh;
-        // object-fit: contain;
+        object-fit: contain;
         border-radius: 30px;
         
     }
@@ -98,17 +97,29 @@
     position: fixed;
     top: 0;
     left: 0;
-    opacity: 0;
-    pointer-events: none;
+    // opacity: 0;
+    pointer-events: auto;
     z-index: 100;
 
+    .imgGra{
+        width: 90%;
+        max-width: 700px;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 30px;
+        
+    }
+
     .btnClosEv{
-        // width: 70px;
-        // height: 70px;
-        // font-size: 60px;
-        // color: #FFF;
+        @include dFlex(center, center, column nowrap);
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        background: transparent;
+        border-radius: 50%;
+        margin-top: 10px;
         cursor: pointer;
-        transform: scale(.9);
+        transform: scale(0.9);
         transition: all .5s ease;
 
         &:hover{
