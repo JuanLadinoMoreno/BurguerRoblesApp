@@ -14,7 +14,7 @@ export default function ItemListContainer({ productsData }) {
     // const {categories} = useGetCategories();
 
     // const [isLoading, setMenuState] = useState(true);
-    const { isLoading } = useGetProducts()
+    const { isLoading } = useGetProducts('products')
 
     return (
         <>
