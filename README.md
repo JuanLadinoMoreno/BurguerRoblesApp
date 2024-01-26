@@ -1,4 +1,4 @@
-# BurguerRoblesApp
+# BurguerRoblesApp 🍔🍟
 
 _Sitio web en donde los clientes podran encontrar informacion del negocio, asi como tambien poder realizar pedidos via web_
 
@@ -46,7 +46,7 @@ _Personas que ayudaron a levantar el proyecto desde sus inicios_
 
 ## Expresiones de Gratitud 🎁
 
-* Gracias a mis profesores y compoañeros que me han brindado su apoyo!
+* Gracias a mis profesores y compañeros que me han brindado su apoyo!
 
 ---
 ⌨️ con ❤️ por [S@YM0N] 😊
