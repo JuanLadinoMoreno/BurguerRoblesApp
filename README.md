@@ -41,12 +41,8 @@ _Tecnologias utilizadas_
 
 _Personas que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Juan Simón Ladino Moreno** - *Trabajo Inicial* )
+* **Juan Simón Ladino Moreno** - *Trabajo Inicial* 
 
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
 ## Expresiones de Gratitud 🎁
 
