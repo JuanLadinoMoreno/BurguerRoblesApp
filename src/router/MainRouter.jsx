@@ -7,6 +7,8 @@ import { Category } from '../pages/Category.jsx'
 import DetailProduct from '../pages/DetailProduct.jsx'
 import { Cart } from '../pages/Cart.jsx'
 import { About } from '../pages/About.jsx'
+import { Grill } from '../pages/Grill.jsx'
+
 
 
 export default function MainRouter() {
@@ -21,6 +23,7 @@ export default function MainRouter() {
         <Route path='/menu/item/:id' element={<DetailProduct />} />
         <Route path='/cart' element={<Cart/>} />
         <Route path='/about' element={<About/>} />
+        <Route path='/grill' element={<Grill/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

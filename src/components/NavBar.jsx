@@ -14,7 +14,7 @@ export default function NavBar() {
             <Link to='/'>Inicio</Link>
             <Link to='/menu'>Menu</Link>
             <Link to='/about'>Quienes somos</Link>
-            <li><a href="pages/asados.html">Asados</a></li>
+            <Link to='/grill'>Al grill</Link>
             <li><a href="pages/eventos.html">Eventos</a></li>
             <li>
                 
