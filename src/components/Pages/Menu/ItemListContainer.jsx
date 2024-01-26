@@ -14,7 +14,7 @@ export default function ItemListContainer({ productsData }) {
     // const {categories} = useGetCategories();
 
     // const [isLoading, setMenuState] = useState(true);
-    const { isLoading } = useGetProducts('products')
+    const { isLoading, setIsLoading } = useGetProducts('products')
 
     return (
         <>
@@ -30,7 +30,11 @@ export default function ItemListContainer({ productsData }) {
                         size="80"
                         speed="1.1"
                         color="#0F1854" 
-                        ></l-dot-spinner> :
+                        >
+                        </l-dot-spinner> :
+
+                         
+
                         <div id="dvProductos" className="dvProductos">
 
                             {
@@ -57,7 +61,7 @@ export default function ItemListContainer({ productsData }) {
                                                     }
 
                                                 </ul>
-                                                <button className="btnAnadirP"><i className="bi bi-cart-plus-fill"></i>Ordenar</button>
+                                                <Link to={`/menu/item/${products.id}`} className="btnAnadirP" ><i className="bi bi-cart-plus-fill"></i>Ordenar</Link>
                                             </div>
                                         </div>
 
@@ -65,12 +69,13 @@ export default function ItemListContainer({ productsData }) {
                                     )
 
                                 })
-
+                                
                             }
 
 
-
                         </div>
+
+
                 }
 
 

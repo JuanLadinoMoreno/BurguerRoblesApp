@@ -12,14 +12,17 @@ export default function ItemDetailContainer() {
 
     const { id } = useParams() //Obtiene id de la ruta para mostrar el producto
     const { productData, isLoading } = useGetProductsById(id, 'products')
-    // const {handleAdd, handleRemove} = useContext(CarContext)
+  
+
 
     return (
 
         <>
-        {/* {
+            {/* {
             console.log(productData.tipo)
         } */}
+
+
 
             {
                 isLoading ?
@@ -33,29 +36,35 @@ export default function ItemDetailContainer() {
 
                         <MenuProducts />
 
-                        <div className="dvProductos">
+                        <div className="container">
 
-                            <div className="dvProducto" key={productData.id}>
+                        {/* ojo aca */}
 
-                                <img className="imgProducto" src={productData.urlImg} alt="" width='350px' />
 
-                                <div className="datProd">
-                                    <h3>{productData.nombre}</h3>
-                                    <ul className="ulIngre">
-                                        <li >{productData.ingrePrep}</li>
-                                        <li >{productData.pan}</li>
-                                        {
-                                            productData.aderesos ? productData.aderesos.map((adereso) => (<li key={adereso.id}> {adereso.nombre} </li>)) : null
-                                        }
-                                        {
-                                            productData.vegetales ? productData.vegetales.map((adereso) => (<li key={adereso.id}>{adereso.nombre}</li>)) : null
-                                        }
-                                    </ul>
+                            <div className="dvProductos">
+
+                                <div className="dvProducto" key={productData.id}>
+
+                                    <img className="imgProducto" src={productData.urlImg} alt="" width='350px' />
+
+                                    <div className="datProd">
+                                        <h3>{productData.nombre}</h3>
+                                        <ul className="ulIngre">
+                                            <li >{productData.ingrePrep}</li>
+                                            <li >{productData.pan}</li>
+                                            {
+                                                productData.aderesos ? productData.aderesos.map((adereso) => (<li key={adereso.id}> {adereso.nombre} </li>)) : null
+                                            }
+                                            {
+                                                productData.vegetales ? productData.vegetales.map((adereso) => (<li key={adereso.id}>{adereso.nombre}</li>)) : null
+                                            }
+                                        </ul>
+                                    </div>
+                                    
+                                    <ItemCount productId={productData.id} productName={productData.nombre} />
                                 </div>
-                                {/* <button className="btnAnadirP" onClick={handleRemove}><i className="bi bi-cart-plus-fill"></i> ➖ </button>
-                                <button className="btnAnadirP" onClick={handleAdd}><i className="bi bi-cart-plus-fill"></i> ➕ </button> */}
-                                <ItemCount productId={productData.id} />
                             </div>
+
                         </div>
 
                     </section>

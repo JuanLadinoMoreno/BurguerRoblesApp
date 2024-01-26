@@ -1,29 +1,16 @@
 
 import { useState, useEffect } from 'react';
-import { getProducts, getProductById, getCategories, getProductByCategory } from '../services';
-import {collection, getDocs, doc, getDoc, getFirestore, query, where} from 'firebase/firestore';
+import { collection, getDocs, doc, getDoc, getFirestore, query, where, orderBy } from 'firebase/firestore';
+import { Logger } from 'sass';
 
 
-// export const useGetProducts = () => {
-//     const [productsData, setProductsData] = useState([]);
-//     const [isLoading, setIsLoading] = useState(true)
 
-//     useEffect(() => {
-//         setTimeout(() => {
-//             getProducts().then(response => {
-//                 setProductsData(response.data);
-//                 setIsLoading(false)
-//                 // console.log(productsData);
-//             }).catch(error => { console.log(error); })
-//         }, 3200);
-//     }, []);
 
-//     return { productsData, isLoading }
-// }
-
-export const useGetProducts = (collectionName = 'products', id) => {
+export const useGetProducts = (collectionName = 'products') => {
     const [productsData, setProductsData] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
+
+    
 
     useEffect(() => {
         setTimeout(() => {
@@ -33,40 +20,91 @@ export const useGetProducts = (collectionName = 'products', id) => {
             const productsCollection = collection(db, collectionName);
 
             // const quer = id ? query(productsCollection, where("category", "==", 'burguerP')) : productsCollection;
-            
-            getDocs(productsCollection).then((snapshot) => {
-                setProductsData(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+
+            const q = query(productsCollection, orderBy("category"));
+
+            getDocs(q).then((snapshot) => {
+                setProductsData(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
             })
             setIsLoading(false);
-            
+
         }, 3200);
     }, []);
 
-    return { productsData, isLoading }
+    return { productsData, isLoading, setIsLoading }
 }
 
 export const useGetProductsCat = (id) => {
     const [productsData, setProductsData] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
-
+    
     useEffect(() => {
+        
         setTimeout(() => {
 
             const db = getFirestore();
 
             const productsCollection = collection(db, 'products');
 
-            const quer = query(productsCollection, where("category", "==", id)) ;
-            
+            const quer = query(productsCollection, where("category", "==", id));
+
             getDocs(quer).then((snapshot) => {
-                setProductsData(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+                setProductsData(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
             })
             setIsLoading(false);
-            
         }, 3200);
+
     }, [id]);
 
     return { productsData, isLoading }
+}
+
+export const useGetProductsCart = (carrito) => {
+    // const [productsData, setProductsData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
+    const [cart, setCart] = useState([])
+
+    useEffect(() => {
+        
+        setTimeout(() => {
+
+            const db = getFirestore();
+
+            const productsCollection = collection(db, 'products');
+
+            const arrCart = []
+
+            getDocs(productsCollection).then((snapshot) => {
+
+
+                snapshot.docs.map((doc) => {
+
+                    for (let i = 0; i < carrito.length; i++) {
+                        if (doc.id === carrito[i].id) {
+                            arrCart.push({ ...doc.data(), id: doc.id, quantity: carrito[i].quantity })
+                        }
+
+                    }
+
+
+                })
+
+
+                setCart(arrCart);
+                // setProductsData(arrCart);
+                setIsLoading(false);
+
+            })
+
+
+
+    
+
+        }, 1000);
+
+    }, []);
+
+    return { cart, setCart, isLoading }
 }
 
 
@@ -84,7 +122,7 @@ export const useGetProductsById = (id, collectionName = "products") => {
             })
 
             setIsLoading(false);
-        }, .2700);
+        }, .3500);
 
     }, []);
 
@@ -100,14 +138,14 @@ export const useGetCategories = (collectionName = "categories") => {
     useEffect(() => {
         // setTimeout(() => {}, 3200);
 
-            const db = getFirestore();
-            const productsCollection = collection(db, collectionName);
-            getDocs(productsCollection).then((snapshot) => {
-                setCategories(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
-            })
+        const db = getFirestore();
+        const productsCollection = collection(db, collectionName);
+        getDocs(productsCollection).then((snapshot) => {
+            setCategories(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+        })
 
-            setIsLoading(false);
-        
+        setIsLoading(false);
+
     }, []);
 
     return { categories, isLoading }
@@ -122,7 +160,7 @@ export const useGetProductsByCategorys = (id) => {
 
     useEffect(() => {
         setTimeout(() => {
-            // ----API----
+            // ----API Refrerenciia----
             // getProductByCategory(id).then(response => {
             //     setProductsData(response.data);
             // }).catch(error => { console.log(error); })

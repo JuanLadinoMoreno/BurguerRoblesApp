@@ -5,6 +5,8 @@ import Menu from '../pages/Menu'
 import Footer from '../components/Footer.jsx'
 import { Category } from '../pages/Category.jsx'
 import DetailProduct from '../pages/DetailProduct.jsx'
+import { Cart } from '../pages/Cart.jsx'
+
 
 export default function MainRouter() {
   return (
@@ -16,6 +18,7 @@ export default function MainRouter() {
         <Route path='/menu' element={<Menu />} />
         <Route path='/menu/category/:id' element={<Category />} />
         <Route path='/menu/item/:id' element={<DetailProduct />} />
+        <Route path='/cart' element={<Cart/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
 import ItemListContainer from '../components/Pages/Menu/ItemListContainer'
-import { getProducts } from '../services';
 import { useGetProducts } from '../Hooks/useProducts';
 
 

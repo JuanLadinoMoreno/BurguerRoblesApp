@@ -1,8 +1,11 @@
 import React, { useContext, useState } from 'react'
+import Toastify from 'toastify-js'
+import { ToastContainer, Zoom, toast } from 'react-toastify';
 import { CarContext } from '../context/CarContext'
 
 
-export const ItemCount = ({ productId }) => {
+
+export const ItemCount = ({ productId, productName }) => {
 
     const { count, setCount } = useContext(CarContext);
     const [countItem, setCountItem] = useState(1);
@@ -32,6 +35,18 @@ export const ItemCount = ({ productId }) => {
             const newCart = structuredClone(count);
             newCart[IndexFind].quantity += countItem
             setCountItem(1);
+
+            // toast.success('Producto agregado2!     ' + toString(productName).toUpperCase() );
+            Toastify({
+                text: "Producto agregado " + productName.toUpperCase(),
+                duration: 1800,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                className: "toastAgregarP"
+                
+              }).showToast();
             return setCount(newCart);
             
         }else{
@@ -42,27 +57,30 @@ export const ItemCount = ({ productId }) => {
                     quantity: countItem
                 }
             ]))
-            console.log('else' + count.findIndex(item => item.id === productId));
+
+            setCountItem(1);
+
+            // toast.success('Producto agregado !!!   ' + productName.toUpperCase());
+
+            Toastify({
+                text: "Producto agregado " + productName.toUpperCase(),
+                duration: 1800,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                className: "toastAgregarP"
+                
+              }).showToast();
+            
         }
 
-        // const prodFind = count.find(item => item.id === productId);
-        // if (prodFind) {
-        //     const newCount = count.map(item => {
-        //         if (item.id === productId) {
-        //             return{
-        //                 ...item,
-        //                 quantity: item.quantity + countItem
-        //             }
-        //         }else{
-        //             return item
-        //         }
-        //     })
-        //     setCount([newCount])
-        // }else{
-        //     setCount([newProduct])
-        // }
+   
+        
 
-        setCountItem(1);
+        
+
+        
     }
 
     return (
@@ -71,6 +89,19 @@ export const ItemCount = ({ productId }) => {
             <span> {countItem} </span>
             <button className="btnAnadirP" onClick={handleAddItem}><i className="bi bi-cart-plus-fill"></i> ➕ </button>
             <button className="btnAnadirP" onClick={addCart}><i className="bi bi-cart-plus-fill"></i>Ordenar</button>
+            {/* <ToastContainer 
+            position="top-right"
+            autoClose={2500}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition: Bounce
+            /> */}
         </div>
     )
 }

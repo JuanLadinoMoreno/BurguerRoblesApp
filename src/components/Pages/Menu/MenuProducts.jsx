@@ -11,7 +11,7 @@ export default function MenuProducts() {
     const { categories, isLoading } = useGetCategories('categories');
     const { count } = useContext(CarContext);
 
-    // const [menuState, setMenuState] = useState(true);
+
 
     return (
         <>
@@ -31,7 +31,7 @@ export default function MenuProducts() {
 
                             {
 
-                                categories.map((cate, index) => {
+                                categories.map((cate) => {
                                     return (
                                         <Link key={cate.id} to={`/menu/category/${cate.id}`} >
                                             <li className="btn-prin btnMenu btnMenuProducto">
@@ -42,12 +42,16 @@ export default function MenuProducts() {
                                 })
                             }
                         </ul>
-                        <a className="btn-transparent " href="../pages/shop.html">
+
+                        <Link className="btn-transparent" to='/cart'> 
+                        
                             <i className="bi bi-cart-fill"></i>
                             En carrito
 
                             <span id="cantidadProductos" className="prodCant "> {count.reduce((acc, prod) => acc + prod.quantity, 0)} </span>
-                        </a>
+                        
+                        </Link>
+                        
                     </div>
             }
 

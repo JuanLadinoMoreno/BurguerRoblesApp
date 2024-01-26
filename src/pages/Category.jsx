@@ -7,7 +7,7 @@ import { useGetProducts, useGetProductsCat } from '../Hooks/useProducts';
 export const Category = () => {
   const {id} = useParams();
 
-  const { productsData, isLoading } = useGetProductsCat(id);
+  const { productsData } = useGetProductsCat(id);
   
     return (
       <>
@@ -19,8 +19,7 @@ export const Category = () => {
           </header>
 
          {
-          // isLoading ?
-          // <h2>cargando</h2> :  
+          
           <ItemListContainer productsData = {productsData}/>
           
          }
