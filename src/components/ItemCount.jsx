@@ -84,7 +84,7 @@ export const ItemCount = ({ productId, productName }) => {
     }
 
     return (
-        <div>
+        <div className="itemCount">
             <button className="btnAnadirP" onClick={handleRemoveItem}><i className="bi bi-cart-plus-fill"></i> ➖ </button>
             <span> {countItem} </span>
             <button className="btnAnadirP" onClick={handleAddItem}><i className="bi bi-cart-plus-fill"></i> ➕ </button>

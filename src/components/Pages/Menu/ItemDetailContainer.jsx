@@ -12,13 +12,13 @@ export default function ItemDetailContainer() {
 
     const { id } = useParams() //Obtiene id de la ruta para mostrar el producto
     const { productData, isLoading } = useGetProductsById(id, 'products')
-  
+
 
 
     return (
 
         <>
-            
+
             {
                 isLoading ?
                     <l-dot-spinner
@@ -31,19 +31,20 @@ export default function ItemDetailContainer() {
 
                         <MenuProducts />
 
-                        <div className="container">
+                        {/* <div className="container"> */}
 
-                        {/* ojo aca */}
+                            {/* ojo aca */}
 
 
-                            <div className="dvProductos">
+                            <div className="dvProductDetail">
 
                                 <div className="dvProducto" key={productData.id}>
+                                    <h3>{productData.nombre}</h3>
 
-                                    <img className="imgProducto" src={productData.urlImg} alt="" width='350px' />
 
                                     <div className="datProd">
-                                        <h3>{productData.nombre}</h3>
+
+                                        <img className="imgProducto" src={productData.urlImg} alt="" width='350px' />
                                         <ul className="ulIngre">
                                             <li >{productData.ingrePrep}</li>
                                             <li >{productData.pan}</li>
@@ -55,12 +56,12 @@ export default function ItemDetailContainer() {
                                             }
                                         </ul>
                                     </div>
-                                    
+
                                     <ItemCount productId={productData.id} productName={productData.nombre} />
                                 </div>
                             </div>
 
-                        </div>
+                        {/* </div> */}
 
                     </section>
             }

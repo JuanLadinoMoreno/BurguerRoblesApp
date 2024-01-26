@@ -104,3 +104,84 @@
 
     }
 }
+
+
+@mixin CardProd(){
+    .dvProducto {
+        @include dFlex(center, center, column nowrap);
+        max-width: 650px;
+        // box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        box-shadow: rgba($color-primero, 0.25) 0px 50px 100px -20px, rgba($color-primero, 0.3) 0px 30px 60px -30px;
+        border-radius: 10px;
+        padding: 5px 20px;
+        margin-top: 50px;
+
+
+
+
+        h3 {
+            font-family: $font-primera;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 0;
+        }
+
+        .btnAnadirP {
+            // min-width: 110px;
+            // background: rgba($color-primero, 0.8);
+            border: 2px solid $color-segundo;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 4px 15px;
+            color: $color-segundo;
+            @include dFlex(center, center, row nowrap);
+            gap: 10px;
+            font-weight: 400;
+            font-size: 20px;
+            transition: all 0.5s;
+
+            &:hover {
+                color: #FFF;
+                background: $color-segundo;
+            }
+        }
+
+        .datProd {
+            @include dFlex(center, center, row nowrap);
+            padding: 15px 0px;
+
+            a{
+                width: 70%;
+                
+                .imgProducto {
+                width: 100%;
+                }
+            }
+
+            
+
+
+            // background: rgba($color-segundo, 0.25);
+            // border: 1px solid $color-segundo;
+            // border-radius: 10px;
+
+            // box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+            
+
+            .ulIngre {
+                @include dFlex(center, flex-start, column nowrap);
+                gap: 5px;
+                width: 50%;
+                text-transform: uppercase;
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: 1px
+
+                
+            }
+        }
+
+
+    }
+}
