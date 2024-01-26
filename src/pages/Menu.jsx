@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import ItemListContainer from '../components/Pages/Menu/ItemListContainer'
 import { useGetProducts } from '../Hooks/useProducts';
-
+import { Head } from '../components/Head';
+Head
 
 export default function Menu() {
 
@@ -11,11 +12,7 @@ export default function Menu() {
 
     return (
         <>
-            <header className="headerPagM">
-                <div className="header-content">
-                    <h1>Menu</h1>
-                </div>
-            </header>
+            <Head title={'Menu'}/>
 
             <ItemListContainer productsData = {productsData}/>
         </>

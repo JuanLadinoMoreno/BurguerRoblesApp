@@ -199,8 +199,6 @@ export const Cart = () => {
 
                   <div>
                     <div id="productsCarr" className="productsCarr ">
-                      {/* <!-- SE ACOMPLETA CON JS --> */}
-
                       {
                         cart.map((producto) => {
                           return (

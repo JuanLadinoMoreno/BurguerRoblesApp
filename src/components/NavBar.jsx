@@ -13,7 +13,7 @@ export default function NavBar() {
         <ul>
             <Link to='/'>Inicio</Link>
             <Link to='/menu'>Menu</Link>
-            <li><a href="pages/about.html">Quienes somos</a></li>
+            <Link to='/about'>Quienes somos</Link>
             <li><a href="pages/asados.html">Asados</a></li>
             <li><a href="pages/eventos.html">Eventos</a></li>
             <li>

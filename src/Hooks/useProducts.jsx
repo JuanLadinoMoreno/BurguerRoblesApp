@@ -28,7 +28,7 @@ export const useGetProducts = (collectionName = 'products') => {
             })
             setIsLoading(false);
 
-        }, 3200);
+        }, 2500);
     }, []);
 
     return { productsData, isLoading, setIsLoading }
@@ -36,11 +36,11 @@ export const useGetProducts = (collectionName = 'products') => {
 
 export const useGetProductsCat = (id) => {
     const [productsData, setProductsData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true)
+    // const [isLoading, setIsLoading] = useState(true)
     
     useEffect(() => {
         
-        setTimeout(() => {
+        // setTimeout(() => {
 
             const db = getFirestore();
 
@@ -51,12 +51,12 @@ export const useGetProductsCat = (id) => {
             getDocs(quer).then((snapshot) => {
                 setProductsData(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
             })
-            setIsLoading(false);
-        }, 3200);
+            // setIsLoading(false);
+        // }, 3500);
 
     }, [id]);
 
-    return { productsData, isLoading }
+    return { productsData }
 }
 
 export const useGetProductsCart = (carrito) => {
@@ -95,10 +95,6 @@ export const useGetProductsCart = (carrito) => {
                 setIsLoading(false);
 
             })
-
-
-
-    
 
         }, 1000);
 
