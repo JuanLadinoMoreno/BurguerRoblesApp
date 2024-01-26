@@ -18,12 +18,7 @@ export default function ItemDetailContainer() {
     return (
 
         <>
-            {/* {
-            console.log(productData.tipo)
-        } */}
-
-
-
+            
             {
                 isLoading ?
                     <l-dot-spinner

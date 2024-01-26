@@ -88,7 +88,7 @@ export const ItemCount = ({ productId, productName }) => {
             <button className="btnAnadirP" onClick={handleRemoveItem}><i className="bi bi-cart-plus-fill"></i> ➖ </button>
             <span> {countItem} </span>
             <button className="btnAnadirP" onClick={handleAddItem}><i className="bi bi-cart-plus-fill"></i> ➕ </button>
-            <button className="btnAnadirP" onClick={addCart}><i className="bi bi-cart-plus-fill"></i>Ordenar</button>
+            <button className="btnAnadirP" onClick={addCart}><i className="bi bi-cart-plus-fill"></i>Agregar al Carrito</button>
             {/* <ToastContainer 
             position="top-right"
             autoClose={2500}
