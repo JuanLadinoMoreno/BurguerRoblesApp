@@ -1,9 +1,9 @@
-import React from 'react'
+
 import { Head } from '../components/Head'
 import BanEventos from '../components/Pages/Home/BanEventos'
-BanEventos
 
-export const About = () => {
+
+export default function About() {
     // const {title} = Head;
     return (
         <>

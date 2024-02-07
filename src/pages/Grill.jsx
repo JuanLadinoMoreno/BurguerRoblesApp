@@ -2,7 +2,7 @@ import { Head } from "../components/Head"
 import BanEventos from "../components/Pages/Home/BanEventos"
 
 
-export const Grill = () => {
+export default function Grill() {
     return (
         <>
             <header class="headerPaga">
