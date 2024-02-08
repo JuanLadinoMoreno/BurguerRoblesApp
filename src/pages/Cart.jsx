@@ -202,7 +202,7 @@ export const Cart = () => {
                       {
                         cart.map((producto) => {
                           return (
-                            <div className="prodCarr">
+                            <div className="prodCarr" key={producto.id}>
                               <img className="imgPro" src={producto.urlImg} alt="" />
                               <div className="titu">
                                 <small>Producto</small>
