@@ -6,32 +6,24 @@ import BanIcons from '../components/Pages/Home/BanIcons.jsx'
 import BanAsados from '../components/Pages/Home/BanAsados.jsx'
 import BanGalle from '../components/Pages/Home/BanGalle.jsx'
 import BanEventos from '../components/Pages/Home/BanEventos.jsx'
-import { Suspense, useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
-
-
+import { useEffect } from 'react'
 
 
 export default function Home() {
 
-  useEffect(() => {
-    document.title = 'Burguer Robles - Home';
-  });
+    useEffect(() => {
+        document.title = 'Burguer Robles - Home';
+    });
 
   return (
     <>
-      
-        <Header />
-        <BestSeller />
-        <MenuIndex />
-        <BanIcons />
-        <BanAsados />
-        <BanGalle />
-        <BanEventos />
-      {/* <Suspense>
-        <Outlet/>
-      </Suspense> */}
-
+    <Header />
+    <BestSeller/>
+    <MenuIndex/>
+    <BanIcons/>
+    <BanAsados/>
+    <BanGalle/>
+    <BanEventos/>
     </>
   )
 }

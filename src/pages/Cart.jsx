@@ -30,7 +30,7 @@ import MenuProducts from "../components/Pages/Menu/MenuProducts";
 
 
 
-export default function Cart() {
+export const Cart = () => {
 
   const { count, setCount } = useContext(CarContext);
   
