@@ -35,45 +35,51 @@ export default function ItemListContainer({ productsData }) {
 
                          
 
-                        <div id="dvProductos" className="dvProductos">
+<div className="dvProductos">
 
-                            {
-                                productsData.map(products => {
-                                    return (
+{
+    productsData.map(products => {
+        return (
 
-                                        <div className="dvProducto" key={products.id}>
-                                            <Link to={`/menu/item/${products.id}`}>
-                                                <img className="imgProducto" src={products.urlImg} alt="" />
-                                            </Link>
-                                            <div className="datProd">
-                                                <h3>{products.nombre}</h3>
-                                                <ul className="ulIngre">
-                                                    <li >{products.ingrePrep}</li>
-                                                    <li >{products.pan}</li>
-
-                                                    {
-                                                        products.aderesos ? products.aderesos.map((adereso) => (<li key={products.nombre + adereso.id}> {adereso.nombre} </li>)) : null
-                                                    }
+            <div className="dvProducto" key={products.id}>
 
 
-                                                    {
-                                                        products.vegetales ? products.vegetales.map((adereso) => (<li key={products.nombre + adereso.id}>{adereso.nombre}</li>)) : null
-                                                    }
-
-                                                </ul>
-                                                <Link to={`/menu/item/${products.id}`} className="btnAnadirP" ><i className="bi bi-cart-plus-fill"></i>Ordenar</Link>
-                                            </div>
-                                        </div>
+                <h3>{products.nombre}</h3>
 
 
-                                    )
+                <div className="datProd">
 
-                                })
-                                
-                            }
+                    <Link to={`/menu/item/${products.id}`}>
+                        <img className="imgProducto" src={products.urlImg} alt="" />
+                    </Link>
+
+                    <ul className="ulIngre">
+                        <li >{products.ingrePrep}</li>
+                        <li >{products.pan}</li>
+
+                        {
+                            products.aderesos ? products.aderesos.map((adereso) => (<li key={products.nombre + adereso.id}> {adereso.nombre} </li>)) : null
+                        }
 
 
-                        </div>
+                        {
+                            products.vegetales ? products.vegetales.map((adereso) => (<li key={products.nombre + adereso.id}>{adereso.nombre}</li>)) : null
+                        }
+
+                    </ul>
+                </div>
+                    <Link to={`/menu/item/${products.id}`} className="btnAnadirP" ><i className="bi bi-cart-plus-fill"></i>Ordenar</Link>
+            </div>
+
+
+        )
+
+    })
+
+}
+
+
+</div>
 
 
                 }
