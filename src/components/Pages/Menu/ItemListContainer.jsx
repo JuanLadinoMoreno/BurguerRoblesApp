@@ -27,32 +27,26 @@ export default function ItemListContainer({ productsData }) {
                     isLoading ?
                         // Default values shown
                         <l-dot-spinner
-                            size="80"
-                            speed="1.1"
-                            color="#0F1854"
+                        size="80"
+                        speed="1.1"
+                        color="#0F1854" 
                         >
                         </l-dot-spinner> :
 
+                         
 
-
-                        <div className="dvProductos">
+                        <div id="dvProductos" className="dvProductos">
 
                             {
                                 productsData.map(products => {
                                     return (
 
                                         <div className="dvProducto" key={products.id}>
-
-
-                                            <h3>{products.nombre}</h3>
-
-
+                                            <Link to={`/menu/item/${products.id}`}>
+                                                <img className="imgProducto" src={products.urlImg} alt="" />
+                                            </Link>
                                             <div className="datProd">
-
-                                                <Link to={`/menu/item/${products.id}`}>
-                                                    <img className="imgProducto" src={products.urlImg} alt="" />
-                                                </Link>
-
+                                                <h3>{products.nombre}</h3>
                                                 <ul className="ulIngre">
                                                     <li >{products.ingrePrep}</li>
                                                     <li >{products.pan}</li>
@@ -67,15 +61,15 @@ export default function ItemListContainer({ productsData }) {
                                                     }
 
                                                 </ul>
-                                            </div>
                                                 <Link to={`/menu/item/${products.id}`} className="btnAnadirP" ><i className="bi bi-cart-plus-fill"></i>Ordenar</Link>
+                                            </div>
                                         </div>
 
 
                                     )
 
                                 })
-
+                                
                             }
 
 
